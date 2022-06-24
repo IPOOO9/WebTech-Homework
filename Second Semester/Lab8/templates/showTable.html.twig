@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Работя с записями</title>
+</head>
+<body>
+{% if tabl %}
+    <table>
+        {% if tabl[0] %}
+            <tr>
+                {% for i in 0..tabl[0]|length %}
+                    {% set data = tabl[0][i] %}
+                    {% if data == null %}
+                    {% elseif data == tabl[0].id %}
+                        <th>ID</th>
+                    {% elseif data == tabl[0].name %}
+                        <th>Имя</th>
+                    {% elseif data == tabl[0].age %}
+                        <th>Возраст</th>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endif %}
+
+        {% for row in tabl %}
+            {% if row %}
+                <tr>
+                    {% for i in 0..row|length %}
+                        {% set data = row[i] %}
+                        {% if data == row.id %}
+                            <td>{{row.id}}</td>
+                        {% elseif data == row.name %}
+                            <td>{{row.name}}</td>
+                        {% elseif data == row.age %}
+                            <td>{{row.age}}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+{% endif %}
+</body>
