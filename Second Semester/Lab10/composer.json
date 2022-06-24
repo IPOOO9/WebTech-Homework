@@ -1,0 +1,11 @@
+{
+    "name": "root/app6",
+    "autoload": {
+        "psr-4": {
+            "root\\app6\\": "src/"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}

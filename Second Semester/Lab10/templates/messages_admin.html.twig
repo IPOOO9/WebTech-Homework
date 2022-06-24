@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title> Чат с аутентификацией </title>
+</head>
+<body>
+
+{% for message in messages %}
+    {% if message is not null %}
+        <b>{{message.mes_user}} {{message.mes_datetime}}</b><br>
+        <b>{{message.mes_message}}</b><br>
+        <form action="/DeleteMessage.php" method="post">
+            <input name="id" type="hidden" value="{{message.mes_id}}">
+            <input type="submit" value="Удалить">
+        </form>
+        <br>
+    {% endif %}
+{% endfor %}
+
+</body>
