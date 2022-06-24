@@ -1,0 +1,13 @@
+{
+    "name": "root/app4",
+    "autoload": {
+        "psr-4": {
+            "root\\app4\\": "src/"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.0",
+        "monolog/monolog": "^2.6"
+    },
+    "minimum-stability": "stable"
+}
