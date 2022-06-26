@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aces{% endblock %}
+
+{% block body %}
+    <h1>Aces</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ace.id }}</td>
+            </tr>
+            <tr>
+                <th>Ace_name</th>
+                <td>{{ ace.aceName }}</td>
+            </tr>
+            <tr>
+                <th>Callsign</th>
+                <td>{{ ace.callsign }}</td>
+            </tr>
+            <tr>
+                <th>Ace`s aircraft</th>
+                <td>{{ace.getFlyOn()|join('|')}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_aces_index') }}">back to list</a>
+
+    <a href="{{ path('app_aces_edit', {'id': ace.id}) }}">edit</a>
+
+    {{ include('aces/_delete_form.html.twig') }}
+{% endblock %}

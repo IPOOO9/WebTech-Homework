@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Aces{% endblock %}
+
+{% block body %}
+    <h1>Edit Aces</h1>
+
+    {{ include('aces/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_aces_index') }}">back to list</a>
+
+    {{ include('aces/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Battles{% endblock %}
+
+{% block body %}
+    <h1>Battles</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ battle.id }}</td>
+            </tr>
+            <tr>
+                <th>Battle_name</th>
+                <td>{{ battle.battleName }}</td>
+            </tr>
+             <tr>
+                <th>Battle_participants</th>
+                <td>{{battle.getBattleParticipants()|join('|')}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_battles_index') }}">back to list</a>
+
+    <a href="{{ path('app_battles_edit', {'id': battle.id}) }}">edit</a>
+
+    {{ include('battles/_delete_form.html.twig') }}
+{% endblock %}

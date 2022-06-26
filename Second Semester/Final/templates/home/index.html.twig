@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Добро пожаловать на домашнюю страницу! ✅</h1>
+{% if is_granted('ROLE_USER') %}
+    В справочниках есть информация:
+    <ul>
+        <li><a href='http://89.108.102.151:1488/aircraft/'>О самолётах</a></li>
+        <li><a href='http://89.108.102.151:1488/nations/'>Об их производителях</a></li>
+        <li><a href='http://89.108.102.151:1488/places/'>О важных местах</a></li>
+        <li><a href='http://89.108.102.151:1488/battles/'>О важных боях</a></li>
+        <li><a href='http://89.108.102.151:1488/aces/'>О самых знаменитых Асах</a></li>
+    </ul>
+     {% endif %} 
+</div>
+{% endblock %}
